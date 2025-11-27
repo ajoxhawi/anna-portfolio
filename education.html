@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Education | Anna</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <style>
+      *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      body{
+        background-color: black;
+        color: white;
+        overflow-x: hidden;
+      }
+
+      header{
+        position: fixed;
+        top:0;
+        left:0;
+        width: 100%;
+        padding:1rem 9%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        background-color: transparent;
+      }
+
+      .logo{
+        font-size: 3rem;
+        color: violet;
+        font-weight: 800;
+        font-style: italic;
+        cursor: pointer;
+        transition: 0.5s ease;
+      }
+
+      .logo:hover{
+        transform: scale(1.1);
+      }
+
+      nav{
+        display: flex;
+        gap: 3rem;
+      }
+
+      nav a{
+        font-size: 1.5rem;
+        color: white;
+        font-weight: 500;
+        border-bottom: 3px solid transparent;
+        transition: 0.3s ease;
+        text-decoration: none;
+      }
+
+     nav a.active,
+     nav a:hover {
+    color: violet;
+    border-bottom: 3px solid violet;
+  }
+      #menu-checkbox{
+        display: none;
+      }
+
+      .menu-toggle{
+        display: none;
+        font-size: 1.6rem;
+        color: violet;
+        cursor: pointer;
+        z-index: 101;
+        padding: 0.5rem;
+      }
+
+      @media(max-width: 995px){
+        nav{
+          position: fixed;
+          top:0;
+          right:-100%;
+          width: 50%;
+          height: 50vh;
+          background-color: black;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+          transition: 0.5s ease;
+        }
+
+        #menu-checkbox:checked ~ nav{
+          right: 0;
+        }
+
+        .menu-toggle{
+          display: block;
+        }
+
+        nav a{
+          font-size: 1rem;
+          margin: 1rem 0;
+        }
+      }
+
+      .heading{
+        width: 90%;
+        max-width: 900px;
+        margin: 120px auto 40px;
+        text-align: center;
+      }
+
+      .heading h1{
+        font-size: 3.2rem;
+        color: white;
+        letter-spacing: 2px;
+        margin-bottom: 35px;
+        position: relative;
+      }
+
+      .heading h1::after{
+        content:"";
+        display:block;
+        width: 80px;
+        height:3px;
+        background: violet;
+        margin:15px auto 0;
+        border-radius:3px;
+      }
+
+      .heading p{
+        font-size: 1.1rem;
+        color: #aaa;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .container{
+        width: 90%;
+        max-width: 1200px;
+        margin:0 auto 80px;
+      }
+
+      .education-content{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .education-item{
+        background: #111;
+        padding: 20px;
+        border-left: 5px solid violet;
+        border-radius: 5px;
+        transition: 0.3s ease;
+      }
+
+      .education-item:hover{
+        background: #1a1a1a;
+      }
+
+      .education-item h2{
+        font-size: 2rem;
+        color: violet;
+        margin-bottom: 10px;
+      }
+
+      .education-item h3{
+        font-size: 1.5rem;
+        color: #fff;
+        margin-bottom: 5px;
+      }
+
+      .education-item p{
+        font-size: 1rem;
+        color: #ccc;
+        line-height: 1.6;
+      }
+
+      @media(max-width:900px){
+        .heading h1{
+          font-size: 2.5rem;
+        }
+
+        .heading p{
+          font-size: 1rem;
+        }
+
+        .education-item h2{
+          font-size: 1.8rem;
+        }
+
+        .education-item h3{
+          font-size: 1.3rem;
+        }
+      }
+
+      @media(max-width:600px){
+        .heading h1{
+          font-size: 2rem;
+        }
+
+        .education-item h2{
+          font-size: 1.5rem;
+        }
+
+        .education-item h3{
+          font-size: 1.1rem;
+        }
+
+        .education-item p{
+          font-size: 0.95rem;
+        }
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <a href="#" class="logo">ANNA</a>
+      <input type="checkbox" id="menu-checkbox">
+      <label for="menu-checkbox" class="menu-toggle"><i class="fa fa-bars"></i></label>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="education.html" class="active">Education</a>
+        <a href="experience.html">Experience & Skills</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <div class="heading">
+      <h1>MY EDUCATION</h1>
+      <p>
+        Learning has always been a part of my journey. Every step of my education has shaped my creativity and passion for storytelling.
+      </p>
+    </div>
+
+    <div class="container">
+      <section class="education-content">
+        <div class="education-item">
+          <h2>Bachelor of Arts in Theatre Media Art</h2>
+          <h3>Federal University Oye Ekiti, Nigeria (2020- 2024)</h3>
+          <p>
+            My undergraduate years immersed me in the world of literature, analysis, and critical thinking.
+            I explored various writing styles, from poetry to prose, developing a strong foundation for my creative work.
+          </p>
+        </div>
+
+        <div class="education-item">
+          <h2>Creative Writing Workshops</h2>
+          <h3>Online & Local Workshops (2021 - 2024)</h3>
+          <p>
+            To enhance my storytelling skills, I participated in multiple workshops focusing on scriptwriting, novel writing, and narrative structure.
+            These sessions allowed me to experiment with new techniques and refine my voice.
+          </p>
+        </div>
+
+        <div class="education-item">
+          <h2>Voice-over & Performance Training</h2>
+          <h3>Freelance & Internship Programs (2024)</h3>
+          <p>
+            Training in voice modulation, performance, and audio storytelling sharpened my skills as a professional voice-over artist.
+            This training complements my writing by enabling me to bring characters and narratives to life audibly.
+          </p>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

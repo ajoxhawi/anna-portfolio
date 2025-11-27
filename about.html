@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me | Anna</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <style>
+      *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: 'Poppins', sans-serif;
+        text-decoration: none;
+        border: none;
+        outline: none;
+      }
+
+      body{
+        background-color: black;
+        color: white;
+        overflow-x: hidden;
+      }
+
+      header{
+        position: fixed;
+        top:0;
+        left:0;
+        width: 100%;
+        padding:1rem 9%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        background-color: transparent;
+      }
+
+      .logo{
+        font-size: 3rem;
+        color: violet;
+        font-weight: 800;
+        font-style: italic;
+        cursor: pointer;
+        transition: 0.5s ease;
+        margin-right: 40px;
+        right: 40px;
+      }
+
+      .logo:hover{
+        transform: scale(1.1);
+      }
+
+      nav{
+        display: flex;
+        gap: 3rem;
+      }
+
+      nav a{
+    font-size: 1.5rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3 ease;
+    border-bottom: 1px solid transparent;
+    
+      }
+      nav a.active,
+     nav a:hover {
+    color: violet;
+    border-bottom: 3px solid violet;
+  }
+      #menu-checkbox{
+        display: none;
+      }
+
+      .menu-toggle{
+        display: none;
+        font-size: 1.6rem;
+        color: violet;
+        cursor: pointer;
+        z-index: 101;
+        padding: 0.5rem;
+      }
+
+      @media(max-width: 995px){
+        nav{
+          position: fixed;
+          top:0;
+          right:-100%;
+          width: 50%;
+          height: 50vh;
+          background-color: black;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 0;
+          transition: 0.5s ease;
+        }
+
+        #menu-checkbox:checked ~ nav{
+          right: 0;
+        }
+
+        .menu-toggle{
+          display: block;
+        }
+
+        nav a{
+          font-size: 1rem;
+          margin: 1rem 0;
+        }
+      }
+      .heading{
+        width: 90%;
+        max-width: 900px;
+        margin: 120px auto 40px;
+        text-align: center;
+      }
+
+      .heading h1{
+        font-size: 3.2rem;
+        color: white;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+        position: relative;
+      }
+
+      .heading h1::after{
+        content:"";
+        display:block;
+        width: 80px;
+        height:3px;
+        background: violet;
+        margin:15px auto 0;
+        border-radius:3px;
+      }
+
+      .heading p{
+        font-size: 1.1rem;
+        color: #aaa;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .container{
+        width: 90%;
+        max-width: 1200px;
+        margin:0 auto 80px;
+      }
+
+      .about{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+
+      .about-image {
+       flex: 1;
+      display: flex;
+      justify-content: center;
+       align-items: center;
+     }
+      .about-image img{
+      position: relative;
+      width: 33vw;
+      height: 500px;
+      box-shadow: 0 0 25px solid violet;
+      cursor: pointer;
+      transition: 0.2s linear;
+      color: white;
+      }
+  
+
+
+      .about-image:hover img{
+        transform: scale(1.08);
+        box-shadow: 0 0 35px violet;
+      }
+
+      .about-content{
+        flex:1;
+      }
+
+      .about-content p{
+        margin-bottom: 20px;
+        font-size: 1.05rem;
+        line-height: 1.6;
+      }
+
+      .about-content span{
+        color: violet;
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      @media(max-width: 900px){
+        .about{
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .about-image img{
+        margin-top: 4rem;
+        height: 60vh;
+        width: 450px;
+        }
+
+        .heading h1{
+          font-size: 2.5rem;
+        }
+
+        .heading p{
+          font-size: 1rem;
+        }
+      }
+
+      @media(max-width: 600px){
+        .heading h1{
+          font-size: 2rem;
+        }
+
+        .about-content p{
+          font-size: 0.95rem;
+        }
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <a href="#" class="logo">ANNA</a>
+      <input type="checkbox" id="menu-checkbox">
+      <label for="menu-checkbox" class="menu-toggle"><i class="fa fa-bars"></i></label>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="education.html">Education</a>
+        <a href="experience.html">Experience & Skills</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <div class="heading">
+      <h1>ABOUT ME</h1>
+      <p>
+        Hey there! I'm <strong>Anna</strong> my pen name, inspired by my middle name, Christiana.
+        My full name is <strong>Anuoluwapo Christiana Olaopin</strong>, and I'm delighted to connect with you.
+      </p>
+    </div>
+
+    <div class="container">
+      <section class="about">
+        <div class="about-image">
+          <img src="Anna.jpg" alt="Portrait of Anna" />
+        </div>
+
+        <div class="about-content">
+          <p>
+            I'm a passionate <span>creative writer</span> - poet, novelist, scriptwriter,
+            voice-over artist, and content creator. My journey began in 2021, when I discovered
+            my deep love for storytelling. Since then, I've dedicated myself to crafting
+            <span>scripts, novels, and stories that inspire, provoke thought, and spark meaningful change</span>.
+            Transforming lives through words has always been at the heart of my mission.
+          </p>
+
+          <p>
+            I believe every voice matters. My work is driven by the conviction that
+            <span>someone, somewhere, needs to hear my message to feel empowered and make informed choices.</span>
+          </p>
+
+          <p>
+            I've had the privilege of showcasing my talent through my short film
+            <span>"JUNE 5"</span>, written during my 2024 internship. As a professional
+            <span>voice-over artist</span>, I deliver compelling and authentic performances
+            that bring stories to life. I've also collaborated with respected clients such as
+            <span>The Bold Network</span> and <span>RCCG Blessed Arena</span>.
+          </p>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

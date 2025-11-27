@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact  Anna Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+    body{
+      background:black;
+      color:white;
+      overflow-x:hidden;
+    }
+    header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:1rem 9%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:100;
+    background:transparent;
+}
+
+.logo{
+  font-size:3rem;
+  color:violet;
+  font-weight:800;
+  font-style:italic;
+  cursor:pointer;
+}
+
+nav a{
+  margin-left:4rem;
+  color:white;
+  font-size:1.5rem;
+  transition:.3s;
+  border-bottom:3px solid transparent;
+  text-decoration: none;
+}
+
+nav a.active,
+nav a:hover{
+  color:violet;
+  border-bottom:3px solid violet;
+}
+#menu-checkbox{
+  display:none;
+}
+
+.menu-toggle{
+  display:none;
+  font-size:1.6rem;
+  color:violet;
+  cursor:pointer;
+  z-index:101;
+  padding:0.5rem;
+}
+
+@media(max-width:995px){
+  nav{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:50%;
+    height:50vh;
+    background:black;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:1rem;
+    transition:right 0.3s ease-in-out;
+    z-index:99;
+  }
+
+  #menu-checkbox:checked ~ nav{
+    right:0;
+  }
+
+  nav a{
+    font-size:1rem;
+    margin:1rem 0;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+}
+
+    .page-header{
+      text-align:center;
+      margin-top:150px;
+      margin-bottom:30px;
+    }
+
+    .page-header h1{
+      font-size:3rem;
+      letter-spacing:3px;
+      font-weight:700;
+    }
+
+    .page-header p{
+      margin-top:12px;
+      color:#bbb;
+      font-size:1.1rem;
+      max-width:700px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .contact-container{
+      width:90%;
+      max-width:1100px;
+      margin:50px auto;
+      display:flex;
+      gap:50px;
+      flex-wrap:wrap;
+    }
+    .contact-info-box{
+      flex:1;
+      min-width:300px;
+      background:#111;
+      padding:35px;
+      border-radius:12px;
+      box-shadow:0 0 20px rgba(238,130,238,0.15);
+    }
+
+    .contact-info-box h2{
+      font-size:1.9rem;
+      color:violet;
+      margin-bottom:25px;
+    }
+
+    .info-item{
+      display:flex;
+      align-items:flex-start;
+      gap:15px;
+      margin-bottom:25px;
+    }
+
+    .info-item i{
+      font-size:1.7rem;
+      color:violet;
+    }
+
+    .info-item p{
+      color:#ccc;
+      line-height:1.5;
+    }
+
+    .info-item a{
+      color:violet;
+      text-decoration:none;
+    }
+    .socials{
+      margin-top:25px;
+      display:flex;
+      gap:15px;
+    }
+
+    .socials a{
+      width:45px;
+      height:45px;
+      background:#000;
+      color:violet;
+      border:2px solid violet;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:1.3rem;
+      transition:.3s;
+      text-decoration: none;
+    }
+
+    .socials a:hover{
+      background:violet;
+      color:black;
+      transform:scale(1.1);
+      box-shadow:0 0 20px violet;
+    }
+    .contact-form{
+      flex:1;
+      min-width:300px;
+      background:#111;
+      padding:35px;
+      border-radius:12px;
+      box-shadow:0 0 20px rgba(238,130,238,0.15);
+    }
+
+    .contact-form h2{
+      font-size:1.9rem;
+      color:violet;
+      margin-bottom:25px;
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+      width:100%;
+      padding:15px;
+      background:black;
+      border:1px solid violet;
+      border-radius:8px;
+      color:white;
+      margin-bottom:20px;
+      font-size:1rem;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus{
+      border-color:white;
+      box-shadow:0 0 10px violet;
+    }
+
+    .btn{
+      width:100%;
+      padding:14px;
+      background:violet;
+      border:none;
+      border-radius:8px;
+      color:black;
+      font-size:1.2rem;
+      font-weight:600;
+      cursor:pointer;
+      transition:.3s;
+    }
+    .btn a{
+      text-decoration:none;
+      color: black;
+    }
+   .btn:hover{
+      background:white;
+      color:black;
+      transform:scale(1.03);
+      box-shadow:0 0 20px violet;
+    }
+    @media(max-width:900px){
+      .contact-container{
+        flex-direction:column;
+      }
+    }
+    #menu-checkbox {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: violet;
+  cursor: pointer;
+  z-index: 101;
+  padding: 0.5rem;
+}
+@media (max-width: 995px) {
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 50%;
+    height: 40vh;
+    background-color: black;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    transition: 0.5s ease;
+  }
+
+  #menu-checkbox:checked ~ nav {
+    right: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+ nav a {
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+}
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a href="#" class="logo">ANNA</a>
+
+  <input type="checkbox" id="menu-checkbox">
+  <label for="menu-checkbox" class="menu-toggle"><i class="fa fa-bars"></i></label>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="education.html">Education</a>
+    <a href="experience.html">Experience & Skills</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+</header>
+
+<div class="page-header">
+  <h1>Contact Me</h1>
+  <p>Have a project, collaboration idea, or creative request?  
+     Reach out  to me I'd love to hear from you.</p>
+</div>
+<div class="contact-container">
+
+  <div class="contact-info-box">
+    <h2>Let's Work Together</h2>
+
+    <div class="info-item">
+      <i class="fa-solid fa-envelope"></i>
+      <p>Email:<br><a href="annaolaopin@gmail.com">annaolaopin@gmail.com</a></p>
+    </div>
+
+    <div class="info-item">
+      <i class="fa-solid fa-phone"></i>
+      <p>Phone:<br>+234 912 116 3752</p>
+    </div>
+
+    <div class="info-item">
+      <i class="fa-solid fa-location-dot"></i>
+      <p>Location:<br>Ibadan, Nigeria</p>
+    </div>
+    <h2 style="margin-top:30px;">Social Profiles</h2>
+    <div class="socials">
+      <a href="https://www.tiktok.com/@ann_anna52"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="htpps://www.instagram.com/anna_the_beloved ?igsh= MWw0aDh3M2RrYTIyeA=="><i class="fa-brands fa-instagram"></i></a>
+      <a href="www.linkedin.com/in/a-christiana-olaopin-095035365"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+    </div>
+
+  </div>
+  <div class="contact-form">
+    <h2>Send a Message</h2>
+
+    <form action="#">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message..." required></textarea>
+      <button class="btn"><a href="annaolaopin@gmail.com">Send Message</a></button>
+    </form>
+  </div>
+
+</div>
+
+</body>
+</html>

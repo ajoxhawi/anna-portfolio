@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience & Skills | Anna</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      text-decoration: none;
+      border: none;
+      outline: none;
+    }
+
+    body {
+      background-color: black;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem 9%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background-color: transparent;
+    }
+
+    .logo {
+      font-size: 3rem;
+      color: violet;
+      font-weight: 800;
+      font-style: italic;
+      cursor: pointer;
+      transition: 0.5s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.1);
+    }
+
+    nav {
+      display: flex;
+      gap: 3rem;
+    }
+
+    nav a {
+      font-size: 1.5rem;
+      color: white;
+      margin-left: 4rem;
+      font-weight: 500;
+      transition: 0.3s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    nav a.active,
+    nav a:hover {
+      color: violet;
+      border-bottom: 3px solid violet;
+    }
+
+    #menu-checkbox {
+      display: none;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.6rem;
+      color: violet;
+      cursor: pointer;
+      z-index: 101;
+      padding: 0.5rem;
+    }
+
+    @media (max-width: 995px) {
+      nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 50%;
+        height: 50vh;
+        background-color: black;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        transition: 0.5s ease;
+      }
+
+      #menu-checkbox:checked ~ nav {
+        right: 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      nav a {
+        font-size: 1rem;
+        margin: 1rem 0;
+      }
+    }
+    .heading {
+      width: 90%;
+      max-width: 900px;
+      margin: 120px auto 40px;
+      text-align: center;
+    }
+    .heading h1 {
+      font-size: 3.2rem;
+      color: white;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .heading h1::after {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 3px;
+      background: violet;
+      margin: 15px auto 0;
+      border-radius: 3px;
+    }
+
+    .experience-section {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .experience {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 30px;
+      background-color: #111;
+      border-left: 3px solid violet;
+      padding: 25px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .experience:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 25px violet;
+    }
+
+    .experience h2 {
+      font-size: 1.8rem;
+      color: violet;
+      margin-bottom: 10px;
+    }
+
+    .experience h3 {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .experience p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #aaa;
+      max-width: 700px;
+    }
+
+    .skills {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto 100px;
+    }
+
+    .skills h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: violet;
+      margin-bottom: 30px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .skill-item {
+      background: #111;
+      border: 2px solid violet;
+      border-radius: 8px;
+      padding: 12px 25px;
+      font-size: 1.2rem;
+      color: white;
+      transition: 0.3s ease;
+    }
+
+    .skill-item:hover {
+      background: violet;
+      color: black;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px violet;
+    }
+
+    @media(max-width: 900px) {
+      .heading h1 {
+        font-size: 2.5rem;
+      }
+
+      .experience h2 {
+        font-size: 1.6rem;
+      }
+
+      .skills h2 {
+        font-size: 2rem;
+      }
+
+      .skill-item {
+        font-size: 1rem;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="#" class="logo">ANNA</a>
+    <input type="checkbox" id="menu-checkbox">
+    <label for="menu-checkbox" class="menu-toggle"><i class="fa fa-bars"></i></label>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="education.html">Education</a>
+      <a href="experience.html" class="active">Experience & Skills</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="heading">
+    <h1>EXPERIENCE & SKILLS</h1>
+    <p>
+      Here's a glimpse into my creative journey,the experiences that shaped my artistry and 
+      the skills I've honed to tell stories that move, inspire, and empower.
+    </p>
+  </div>
+
+  <section class="experience-section">
+    <div class="experience">
+      <div>
+        <h2>Creative Writing & Storytelling</h2>
+        <h3>2021 - Present</h3>
+        <p>
+          I've written a variety of creative works including poetry, scripts, and short stories.
+          My storytelling focuses on emotion, transformation, and empowerment — crafted to resonate deeply
+          with my audience and spark meaningful reflection.
+        </p>
+      </div>
+    </div>
+
+    <div class="experience">
+      <div>
+        <h2>Voiceover Artist</h2>
+        <h3>2022 - Present | The Bold Network, RCCG Blessed Arena</h3>
+        <p>
+          My voiceover career allows me to bring words to life through tone, rhythm, and emotion.
+          I've voiced projects for clients in entertainment, radio, and digital campaigns, ensuring
+          clarity, character, and connection in every performance.
+        </p>
+      </div>
+    </div>
+
+    <div class="experience">
+      <div>
+        <h2>Film & Scriptwriting</h2>
+        <h3>2024 | Internship Project: “JUNE 5”</h3>
+        <p>
+          Wrote and developed the script for <span style="color: violet;">“JUNE 5”</span>, a short film exploring
+          the power of choice and consequence. This experience refined my cinematic storytelling,
+          teamwork, and production collaboration skills.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills">
+    <h2>Core Skills</h2>
+    <div class="skill-list">
+      <div class="skill-item">Creative Writing</div>
+      <div class="skill-item">Voiceover Artistry</div>
+      <div class="skill-item">Scriptwriting</div>
+      <div class="skill-item">Storytelling</div>
+      <div class="skill-item">Public Speaking</div>
+      <div class="skill-item">Content Creation</div>
+      <div class="skill-item">Video Narration</div>
+      <div class="skill-item">Editing & Proofreading</div>
+      <div class="skill-item">Creative Direction</div>
+    </div>
+  </section>
+</body>
+</html>
